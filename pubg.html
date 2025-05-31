@@ -1,0 +1,188 @@
+<section class="form-card">
+  <div class="form-header">
+    <img src="img/pubg_icon.png" alt="PUBG Mobile Logo" />
+    <h3>PUBG Mobile</h3>
+  </div>
+  <form id="pubgForm">
+    <div class="form-group">
+      <label for="userIdPUBG">User ID:</label>
+      <input type="text" id="userIdPUBG" placeholder="Masukkan ID (contoh: 12345678)" required />
+    </div>
+
+    <div class="form-group">
+      <label for="diamondOptionPUBG">Pilih Jumlah UC (Unknown Cash):</label>
+      <select id="diamondOptionPUBG" required>
+        <option value="" selected disabled>Pilih Paket UC</option>
+        <option value="60 UC - Rp9.000">60 UC - Rp9.000</option>
+        <option value="300 UC - Rp45.000">300 UC - Rp45.000</option>
+        <option value="625 UC - Rp90.000">625 UC - Rp90.000</option>
+        <option value="1250 UC - Rp180.000">1250 UC - Rp180.000</option>
+        <option value="2500 UC - Rp360.000">2500 UC - Rp360.000</option>
+        <option value="5000 UC - Rp720.000">5000 UC - Rp720.000</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="memberOptionPUBG">Pilih Member:</label>
+      <select id="memberOptionPUBG">
+        <option value="Tidak Ada" selected>Tidak Ada</option>
+        <option value="Royal Pass">Royal Pass</option>
+        <option value="Elite Pass">Elite Pass</option>
+        <option value="Elite Pass Plus">Elite Pass Plus</option>
+      </select>
+    </div>
+
+    <button type="submit">Top Up Sekarang</button>
+  </form>
+</section>
+
+<style>
+  body {
+    background: linear-gradient(135deg, #07182a, #0f3859);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  .form-card {
+    background: linear-gradient(135deg, #103a69, #1c598f);
+    color: #e0f0ff;
+    border-radius: 16px;
+    box-shadow: 0 12px 25px rgba(15, 88, 159, 0.6);
+    max-width: 480px;
+    width: 100%;
+    padding: 30px 35px;
+    border: 2px solid #59a2ffcc;
+    box-sizing: border-box;
+  }
+
+  .form-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+
+  .form-header img {
+    width: 56px;
+    height: 56px;
+    margin-right: 14px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px #59a2ffcc;
+  }
+
+  .form-header h3 {
+    font-size: 2rem;
+    color: #59a2ff;
+    text-shadow: 1px 1px 4px #0c2a5d;
+    margin: 0;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  label {
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 6px;
+    color: #a9cdf9cc;
+  }
+
+  input[type="text"],
+  select {
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: none;
+    background: #1a3c72;
+    color: #e0f0ff;
+    font-size: 1rem;
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.6);
+    transition: all 0.3s ease;
+  }
+
+  input::placeholder {
+    color: #a0bcd6aa;
+  }
+
+  input[type="text"]:focus,
+  select:focus {
+    outline: none;
+    border: 2px solid #59a2ff;
+    background: #1f4f8a;
+    box-shadow: 0 0 14px #59a2ffcc;
+  }
+
+  button {
+    margin-top: 10px;
+    padding: 14px 0;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #0f3859;
+    background: #59a2ff;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(89, 162, 255, 0.6);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  button:hover,
+  button:focus {
+    background-color: #4a8de0;
+    box-shadow: 0 8px 22px rgba(74, 141, 224, 0.9);
+  }
+
+  @media (max-width: 480px) {
+    .form-card {
+      padding: 25px 20px;
+    }
+    .form-header h3 {
+      font-size: 1.6rem;
+    }
+    button {
+      font-size: 1rem;
+      padding: 12px 0;
+    }
+  }
+</style>
+
+<script>
+  document.getElementById('pubgForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const userId = document.getElementById('userIdPUBG').value.trim();
+    const uc = document.getElementById('diamondOptionPUBG').value;
+    const member = document.getElementById('memberOptionPUBG').value;
+    const nomorTujuan = "6289504090549";
+
+    if (!userId) {
+      alert("Harap isi User ID.");
+      return;
+    }
+
+    if (!uc) {
+      alert("Harap pilih paket UC.");
+      return;
+    }
+
+    const pesan = `Halo, saya ingin top up PUBG Mobile dengan rincian berikut:%0A
+🆔 User ID: ${userId}%0A
+💎 Paket UC: ${uc}%0A
+🎫 Member: ${member}%0A
+%0AMohon diproses ya!`;
+
+    const linkWA = `https://wa.me/${nomorTujuan}?text=${pesan}`;
+    window.open(linkWA, '_blank');
+  });
+</script>
