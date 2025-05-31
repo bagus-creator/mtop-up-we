@@ -1,0 +1,189 @@
+<section class="form-card">
+  <div class="form-header">
+    <img src="img/ff_icon.png" alt="Free Fire Logo" />
+    <h3>Free Fire</h3>
+  </div>
+  <form id="ffForm">
+    <div class="form-group">
+      <label for="userIdFF">User ID:</label>
+      <input type="text" id="userIdFF" placeholder="Masukkan ID (contoh: 12345678)" required />
+    </div>
+
+    <div class="form-group">
+      <label for="diamondOptionFF">Pilih Jumlah Diamond:</label>
+      <select id="diamondOptionFF">
+        <option value="" selected>Pilih Diamond</option>
+        <option value="5 Diamond - Rp1.500">5 Diamond - Rp1.500</option>
+        <option value="12 Diamond - Rp3.000">12 Diamond - Rp3.000</option>
+        <option value="25 Diamond - Rp5.000">25 Diamond - Rp5.000</option>
+        <option value="50 Diamond - Rp10.000">50 Diamond - Rp10.000</option>
+        <option value="70 Diamond - Rp15.000">70 Diamond - Rp15.000</option>
+        <option value="140 Diamond - Rp30.000">140 Diamond - Rp30.000</option>
+        <option value="355 Diamond - Rp75.000">355 Diamond - Rp75.000</option>
+        <option value="720 Diamond - Rp150.000">720 Diamond - Rp150.000</option>
+        <option value="1500 Diamond - Rp300.000">1500 Diamond - Rp300.000</option>
+        <option value="3700 Diamond - Rp700.000">3700 Diamond - Rp700.000</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="memberOptionFF">Pilih Member:</label>
+      <select id="memberOptionFF">
+        <option value="Tidak Ada" selected>Tidak Ada</option>
+        <option value="Elite Pass">Elite Pass</option>
+        <option value="Elite Pass Plus">Elite Pass Plus</option>
+        <option value="Booyah Membership">Booyah Membership</option>
+      </select>
+    </div>
+
+    <button type="submit">Top Up Sekarang</button>
+  </form>
+</section>
+
+<style>
+  body {
+    background: linear-gradient(135deg, #ff6600, #cc3300);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  .form-card {
+    background: linear-gradient(135deg, #4b2200, #a43e00);
+    color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 12px 25px rgba(255, 102, 0, 0.5);
+    max-width: 480px;
+    width: 100%;
+    padding: 30px 35px;
+    border: 2px solid #ff6600cc;
+  }
+
+  .form-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  .form-header img {
+    width: 56px;
+    height: 56px;
+    margin-right: 14px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px #ff6600aa;
+  }
+  .form-header h3 {
+    font-size: 2rem;
+    color: #ffcc33;
+    text-shadow: 1px 1px 5px #330d00;
+    margin: 0;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  label {
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 6px;
+    color: #ffcc33cc;
+  }
+
+  input[type="text"],
+  select {
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: none;
+    background: #6f3800;
+    color: #fff;
+    font-size: 1rem;
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.6);
+    transition: all 0.3s ease;
+  }
+
+  input::placeholder {
+    color: #e6b07baa;
+  }
+
+  input[type="text"]:focus,
+  select:focus {
+    outline: none;
+    border: 2px solid #ffcc33;
+    background: #7f4800;
+    box-shadow: 0 0 12px #ffcc33cc;
+  }
+
+  button {
+    margin-top: 10px;
+    padding: 14px 0;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #330d00;
+    background: #ffcc33;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(255, 204, 51, 0.6);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  button:hover,
+  button:focus {
+    background-color: #e6b800;
+    box-shadow: 0 8px 22px rgba(230, 184, 0, 0.9);
+  }
+
+  @media (max-width: 480px) {
+    .form-card {
+      padding: 25px 20px;
+    }
+    .form-header h3 {
+      font-size: 1.6rem;
+    }
+    button {
+      font-size: 1rem;
+      padding: 12px 0;
+    }
+  }
+</style>
+
+<script>
+  document.getElementById('ffForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const userId = document.getElementById('userIdFF').value.trim();
+    const diamond = document.getElementById('diamondOptionFF').value;
+    const member = document.getElementById('memberOptionFF').value;
+    const nomorTujuan = "6289504090549";
+
+    if (!userId) {
+      alert("Harap isi User ID.");
+      return;
+    }
+
+    if (diamond === "") {
+      alert("Harap pilih paket Diamond.");
+      return;
+    }
+
+    const pesan = `Halo, saya ingin top up Free Fire dengan rincian berikut:%0A
+🆔 User ID: ${userId}%0A
+💎 Paket Diamond: ${diamond}%0A
+🎫 Member: ${member}%0A
+%0AMohon diproses ya!`;
+
+    const linkWA = `https://wa.me/${nomorTujuan}?text=${pesan}`;
+    window.open(linkWA, '_blank');
+  });
+</script>
