@@ -1,0 +1,222 @@
+<section class="form-card">
+  <div class="form-header">
+    <img src="img/ml icon.jpg" alt="Mobile Legends Logo" />
+    <h3>Mobile Legends</h3>
+  </div>
+  <form id="mlbbForm">
+    <div class="form-group">
+      <label for="userId">User ID:</label>
+      <input type="text" id="userId" placeholder="Masukkan ID (contoh: 12345678)" required />
+    </div>
+
+    <div class="form-group">
+      <label for="serverId">Server ID:</label>
+      <input type="text" id="serverId" placeholder="Masukkan Server ID (contoh: 1234)" required />
+    </div>
+
+    <div class="form-group">
+      <label for="diamondOption">Pilih Jumlah Diamond:</label>
+      <select id="diamondOption">
+        <option value="" selected>Pilih Diamond</option>
+        <option value="5 Diamond - Rp1.500">5 Diamond - Rp1.500</option>
+        <option value="11 Diamond - Rp3.000">11 Diamond - Rp3.000</option>
+        <option value="19 Diamond - Rp5.000">19 Diamond - Rp5.000</option>
+        <option value="36 Diamond - Rp10.000">36 Diamond - Rp10.000</option>
+        <option value="86 Diamond - Rp20.000">86 Diamond - Rp20.000</option>
+        <option value="172 Diamond - Rp40.000">172 Diamond - Rp40.000</option>
+        <option value="257 Diamond - Rp60.000">257 Diamond - Rp60.000</option>
+        <option value="344 Diamond - Rp80.000">344 Diamond - Rp80.000</option>
+        <option value="429 Diamond - Rp100.000">429 Diamond - Rp100.000</option>
+        <option value="706 Diamond - Rp150.000">706 Diamond - Rp150.000</option>
+        <option value="1412 Diamond - Rp300.000">1412 Diamond - Rp300.000</option>
+        <option value="2195 Diamond - Rp450.000">2195 Diamond - Rp450.000</option>
+        <option value="3688 Diamond - Rp600.000">3688 Diamond - Rp600.000</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="memberOption">Pilih Member:</label>
+      <select id="memberOption">
+        <option value="Tidak Ada" selected>Tidak Ada</option>
+        <option value="Weekly Diamond Pass">Weekly Diamond Pass</option>
+        <option value="Starlight Member">Starlight Member</option>
+        <option value="Twilight Pass">Twilight Pass</option>
+      </select>
+    </div>
+
+    <button type="submit">Top Up Sekarang</button>
+  </form>
+</section>
+
+<style>
+  /* Reset & base */
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    background: linear-gradient(135deg, #0f1e4f, #12182f);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+
+  .form-card {
+    background: linear-gradient(135deg, #1c1f3a, #2c3060);
+    color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 12px 25px rgba(255, 215, 0, 0.35);
+    max-width: 480px;
+    width: 100%;
+    padding: 30px 35px;
+    border: 2px solid #ffd70088;
+  }
+
+  .form-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  .form-header img {
+    width: 56px;
+    height: 56px;
+    margin-right: 14px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px #ffd700aa;
+  }
+  .form-header h3 {
+    font-size: 2rem;
+    color: #ffd700;
+    text-shadow: 1px 1px 5px #000;
+    margin: 0;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  label {
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 6px;
+    color: #ffd700cc;
+  }
+
+  input[type="text"],
+  select {
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: none;
+    background: #2f355e;
+    color: #fff;
+    font-size: 1rem;
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.6);
+    transition: all 0.3s ease;
+  }
+
+  input::placeholder {
+    color: #bfbfbfaa;
+  }
+
+  input[type="text"]:focus,
+  select:focus {
+    outline: none;
+    border: 2px solid #ffd700;
+    background: #3c4170;
+    box-shadow: 0 0 12px #ffd700cc;
+  }
+
+  button {
+    margin-top: 10px;
+    padding: 14px 0;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #1c1f3a;
+    background: #ffd700;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(255, 215, 0, 0.6);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  button:hover,
+  button:focus {
+    background-color: #e6c200;
+    box-shadow: 0 8px 22px rgba(230, 194, 0, 0.9);
+  }
+
+  /* Responsive */
+  @media (max-width: 480px) {
+    .form-card {
+      padding: 25px 20px;
+    }
+    .form-header h3 {
+      font-size: 1.6rem;
+    }
+    button {
+      font-size: 1rem;
+      padding: 12px 0;
+    }
+  }
+</style>
+
+<script>
+  const diamondSelect = document.getElementById('diamondOption');
+  const memberSelect = document.getElementById('memberOption');
+
+  // Kalau pilih diamond, reset member ke "Tidak Ada"
+  diamondSelect.addEventListener('change', () => {
+    if (diamondSelect.value !== "") {
+      memberSelect.value = "Tidak Ada";
+    }
+  });
+
+  // Kalau pilih member bukan "Tidak Ada", reset diamond ke kosong
+  memberSelect.addEventListener('change', () => {
+    if (memberSelect.value !== "Tidak Ada") {
+      diamondSelect.value = "";
+    }
+  });
+
+  document.getElementById('mlbbForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const userId = document.getElementById('userId').value.trim();
+    const serverId = document.getElementById('serverId').value.trim();
+    const diamond = diamondSelect.value;
+    const member = memberSelect.value;
+    const nomorTujuan = "6289504090549";
+
+    if (!userId || !serverId) {
+      alert("Harap isi User ID dan Server ID.");
+      return;
+    }
+
+    if (diamond === "" && member === "Tidak Ada") {
+      alert("Harap pilih salah satu paket Diamond atau Member.");
+      return;
+    }
+
+    const paket = diamond !== "" ? diamond : member;
+
+    const pesan = `Halo, saya ingin top up Mobile Legends dengan rincian berikut:%0A
+🆔 User ID: ${userId}%0A
+🌐 Server ID: ${serverId}%0A
+📦 Paket: ${paket}%0A
+%0AMohon diproses ya!`;
+
+    const linkWA = `https://wa.me/${nomorTujuan}?text=${pesan}`;
+    window.open(linkWA, '_blank');
+  });
+</script>

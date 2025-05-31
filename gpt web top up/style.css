@@ -1,0 +1,191 @@
+/* RESET DASAR */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f3f3f3;
+  line-height: 1.6;
+}
+
+/* HEADER */
+header {
+  background-color: #fff;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.logo {
+  font-size: 24px;
+  color: #f26b00;
+  font-weight: bold;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+@media (max-width: 600px) {
+  nav {
+    width: 100%;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  nav a {
+    margin: 5px 10px;
+  }
+}
+
+/* SLIDER */
+.slider {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+.slides {
+  display: flex;
+  width: 300%;
+  height: 100%;
+  animation: slide 15s infinite;
+}
+
+.slides img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@keyframes slide {
+  0%   { margin-left: 0%; }
+  33%  { margin-left: -100%; }
+  66%  { margin-left: -200%; }
+  100% { margin-left: 0%; }
+}
+
+/* GAME SECTION */
+.game-section {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.game-section h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.game-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.game-card {
+  width: 200px;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.game-card:hover {
+  transform: scale(1.03);
+}
+
+.game-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+}
+
+.game-card p {
+  padding: 10px;
+  margin: 0;
+  font-weight: bold;
+  color: #555;
+}
+
+/* FOOTER */
+footer {
+  background-color: #fff;
+  padding: 40px 20px 20px;
+  color: #555;
+  border-top: 1px solid #ddd;
+  margin-bottom: 0%;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto 20px;
+}
+
+.footer-about, .footer-contact {
+  flex: 1 1 300px;
+  margin: 10px;
+}
+
+.footer-about h3,
+.footer-contact h3 {
+  margin-bottom: 10px;
+  color: #f26b00;
+}
+
+.footer-bottom {
+  text-align: center;
+  color: #888;
+  font-size: 14px;
+}
+
+/* RESPONSIVE FOOTER */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-about,
+  .footer-contact {
+    margin-top: auto;
+  }
+}
+
+/* RESPONSIVE SLIDER */
+@media (max-width: 600px) {
+  .slider {
+    height: 180px;
+  }
+}
+
+/* RESPONSIVE GAME CARD */
+@media (max-width: 500px) {
+  .game-card {
+    width: 100%;
+    max-width: 300px;
+  }
+}
